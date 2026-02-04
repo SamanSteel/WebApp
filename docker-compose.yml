@@ -14,8 +14,8 @@ services:
     networks:
       - warehouse_net
       - npm_net
-    expose:
-      - '3000'
+    ports:
+      - '3000:3000'
     restart: unless-stopped
 
 networks:

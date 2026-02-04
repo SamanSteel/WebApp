@@ -25,4 +25,4 @@ RUN pnpm install --prod
 
 EXPOSE 3000
 
-CMD ["node", ".svelte-kit/output/server/app.js"]
+CMD ["node", ".svelte-kit/output/server/index.js"]
