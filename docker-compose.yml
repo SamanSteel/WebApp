@@ -7,21 +7,8 @@ services:
     networks:
       - npm_net
     expose:
-      - '9000'
+      - '9090'
     restart: unless-stopped
-    environment:
-      NODE_ENV: production
-
-  frontend:
-    build: ./frontend
-    container_name: Warehouse
-    networks:
-      - npm_net
-    expose:
-      - '80'
-    restart: unless-stopped
-    environment:
-      VITE_API_URL: '/api' # مسیر relative برای production
 
 networks:
   npm_net:
