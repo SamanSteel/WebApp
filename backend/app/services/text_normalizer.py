@@ -14,7 +14,7 @@ def normalize_text(text: str) -> str:
 
     text = text.replace("‌", " ")
 
-    text=text.lower()
+    text = text.lower()
     text = re.sub(r"([آ-یA-Za-z])(\d)", r"\1 \2", text)
     text = re.sub(r"(\d)([آ-یA-Za-z])", r"\1 \2", text)
 

@@ -1,26 +1,17 @@
-version: '3.9'
-
 services:
   backend:
     build: ./backend
     container_name: WarehouseAPI
-    networks:
-      - npm_net
-    expose:
-      - '9000'
+    ports:
+      - 9000:9000
     restart: unless-stopped
+
 
   frontend:
     build: ./frontend
     container_name: Warehouse
-    networks:
-      - npm_net
-    expose:
-      - '80'
+    ports:
+      - 80:80
     restart: unless-stopped
     environment:
       VITE_API_URL: '/api'
-
-networks:
-  npm_net:
-    external: true

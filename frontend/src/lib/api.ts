@@ -9,7 +9,7 @@ export interface CostCenter {
 	'نام مرکز': string;
 }
 
-const BASE = '/api/search';
+const BASE = 'http://192.168.20.19:9000/api/search';
 
 async function request<T>(url: string): Promise<T> {
 	const res = await fetch(url);

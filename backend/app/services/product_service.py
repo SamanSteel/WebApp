@@ -10,6 +10,7 @@ class ProductService:
         self.df = df.with_columns(
             pl.col("نام کالا").cast(pl.Utf8).map_elements(normalize_text).alias("normalized_name")
         )
+
     def search(self, query: str):
         query = normalize_text(query)
         words = query.split()
@@ -26,6 +27,7 @@ class CostCenterService:
         self.df = df.with_columns(
             pl.col("نام مرکز").cast(pl.Utf8).map_elements(normalize_text).alias("normalized_name")
         )
+
     def search(self, query: str):
         query = normalize_text(query)
         words = query.split()
